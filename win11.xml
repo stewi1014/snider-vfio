@@ -188,8 +188,8 @@
         <device path="/dev/tpm0"/>
       </backend>
     </tpm>
-    <graphics type="spice">
-      <listen type="none"/>
+    <graphics type="spice" port="-1" autoport="no">
+      <listen type="address"/>
       <image compression="off"/>
       <gl enable="no"/>
     </graphics>
@@ -212,4 +212,3 @@
     </memballoon>
   </devices>
 </domain>
-

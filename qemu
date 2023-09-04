@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# /etc/libvirt/hooks/qemu
+# Not a folder, just executable with that path
+
+if [[ $1 == "win11" ]] && [[ $2 == "start" || $2 == "stopped" ]]
+then
+  if [[ $2 == "start" ]]
+  then
+    systemctl set-property --runtime -- user.slice AllowedCPUs=0-3,8-11
+    systemctl set-property --runtime -- system.slice AllowedCPUs=0-3,8-11
+    systemctl set-property --runtime -- init.scope AllowedCPUs=0-3,8-11
+  else
+    systemctl set-property --runtime -- user.slice AllowedCPUs=0-15
+    systemctl set-property --runtime -- system.slice AllowedCPUs=0-15
+    systemctl set-property --runtime -- init.scope AllowedCPUs=0-15
+  fi
+fi
