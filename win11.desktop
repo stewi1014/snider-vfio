@@ -1,9 +1,11 @@
 #!/usr/bin/env xdg-open
+
+# Placed in $HOME/.local/share/applications
+
 [Desktop Entry]
 Comment=Run Windows 11
-Exec=/home/stewi/Virtual/vfio/win11.sh
-Icon=/home/stewi/Virtual/vfio/win11.svg
+Exec=/home/stewi/.local/share/win11/win11.sh
+Icon=/home/stewi/.local/share/win11/win11.svg
 Name=Windows 11
-StartupWMClass=looking-glass-client
 Type=Application
-Terminal=true
+StartupWMClass=virt-viewer
